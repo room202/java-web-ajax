@@ -12,8 +12,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-	// ReturnJson.java(Servlet)へajax
-	$.ajax({
+        // ReturnJson.java(Servlet)へajax
+      $.ajax({
         type: "POST",
         url: "http://localhost:8080/ReturnJson",
       }).done(function(data){
