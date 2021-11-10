@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="data"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$.ajax({
+    type: "POST",
+    url: "returnJSON.php",
+    async: false, // falseで非同期を止める
+    cache: false,
+    dataType: "json",
+    data: {
+      id: "1",
+    }
+  }).done(function(data){
+    console.log(data.id);
+    $("#data").text(data.memo);
+  }).fail(function(XMLHttpRequest, status, e){
+    console.log(e);
+  });
+
+  console.log("通った");
+</script>
+</body>
+</html>
